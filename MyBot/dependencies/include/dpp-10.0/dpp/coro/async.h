@@ -18,19 +18,9 @@
  * limitations under the License.
  *
  ************************************************************************************/
-#pragma once
-
-#include <dpp/utility.h>
-
-namespace dpp {
-
-struct async_dummy {
-	int* dummy_shared_state = nullptr;
-};
-
-}
 
 #ifdef DPP_CORO
+#pragma once
 
 #include "coro.h"
 
@@ -499,8 +489,6 @@ public:
 		return static_cast<detail::async::async_base<R>&&>(*this);
 	}
 };
-
-DPP_CHECK_ABI_COMPAT(async<>, async_dummy);
 
 } // namespace dpp
 
